@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT PROPOGRATION</title>
+    <!-- propogration is flow or step by step process -->
+     <!-- capturing---document,html,body,div,button -->
+      <!-- bubbling---button,div,body,html,document -->
+</head>
+<body>
+
+    <!-- <div id="grandparent">grandparent
+        <div id="parent">parent
+            <div id="child">child</div>
+        </div>
+    </div>
+    <script>
+        //bubbing
+        let grand_ele=document.getElementById("grandparent");
+        grand_ele.addEventListener("click",() => {
+            console.log("hello from grandparent");
+        });
+        let parent_ele=document.getElementById("parent");
+        parent_ele.addEventListener("click",() => {
+            console.log("hello from parent");
+        });
+        let child_ele=document.getElementById("child");
+        child_ele.addEventListener("click",(event) => {
+            event.stopPropagation() //limited
+            console.log("hello from child");
+        });
+        
+        child_ele.addEventListener("click",(event) => {
+            event.stopPropagation() //limited
+            console.log("hello from child");
+        });
+        child_ele.addEventListener("click",(event) => {
+            event.stopImmediatePropagation() //limited
+            console.log("hello from child");
+        }); </script>-->
+
+
+
+<!-- <form action="" method="">
+    <input type="text" name="username" id="">
+    <button type="submit">submit</button>
+</form>
+<script>
+    let form=document.getElementsByTagName("form")[0]
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        console.log("submitted")
+        let username=document.getElementsByName("username")[0]
+        console.log(username.value)
+    })
+
+
+    //stop propogation->parent and child
+    //stopImmediateprop->to control multiple handlers on same elements
+    //e.eventDefault()->to stop the page from reloading  (used more)
+    
+</script>-->
+
+
+<!--     
+    <button>submit</button>
+    <script>
+        let btn=document.getElementsByTagName("button")[0]
+
+        btn.addEventListener("click",()=>{
+            console.log("hello from 1")
+        });
+
+        btn.addEventListener("click",function() {
+            console.log("hello from 2")
+        });
+    
+    </script> -->
+
+
+
+     <script>
+        //nullish coellisong(??) //short circirt operator
+        //condition?true:false
+        //null or defined ?? values
+        let a
+        let num=a??"null"
+        console.log(num)
+
+        function add(a,b){
+            b=b??0
+            return a+b
+        }
+        console.log(add(2,5))
+
+
+     </script> 
+    
+</body>
+</html>
